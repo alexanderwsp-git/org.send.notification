@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  send_notification:
+    image: alexanderwsp/org.send.notification:1.0.1
+    container_name: send_notification
+    environment:
+      - URL_RMQ="amqp://guest:guest@IP:5672/notification"
+    networks:
+      - apps
+
+networks:
+  apps:
+    name: apps
+    external: true

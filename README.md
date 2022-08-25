@@ -88,6 +88,14 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+### Docker build and run
+```bash
+docker build -t alexanderwsp/org.send.notification:1.0.1 .
+docker run --rm -it --name send_notification \
+ --network=apps \
+ -e URL_RMQ="amqp://guest:guest@rabbitmq:5672/notification" \
+ alexanderwsp/org.send.notification:1.0.1
+```
 
 ## Support
 
